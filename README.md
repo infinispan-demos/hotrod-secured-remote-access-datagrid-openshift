@@ -69,6 +69,7 @@ $ oc new-app datagrid-service -n rhdg \
 ~~~shell
 $ oc create -n rhdg route passthrough secure-datagrid-app-hotrod --service datagrid-service
 $ oc get -n rhdg route secure-datagrid-app-hotrod
+
 NAME                         HOST/PORT                                                                  PATH      SERVICES           PORT      TERMINATION   WILDCARD
 secure-datagrid-app-hotrod   secure-datagrid-app-hotrod-rhdg.<Openshift Application Suffix>                       datagrid-service   hotrod    passthrough   None
 ~~~
@@ -83,7 +84,7 @@ $ git clone https://github.com/infinispan-demos/hotrod-secured-remote-access-dat
 $ cd hotrod-secured-remote-access-datagrid-openshift
 ~~~
 
-2. Edit `src/main/ressources/jdg.properties` as following
+2. Edit `src/main/resources/jdg.properties` as following
 
 ~~~
 jdg.host=secure-datagrid-app-hotrod-rhdg.<Openshift Application Suffix>
