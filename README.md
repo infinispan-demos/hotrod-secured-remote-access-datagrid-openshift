@@ -7,7 +7,7 @@ What is it?
 
 Hot Rod is a binary TCP client-server protocol used in Red Hat Data Grid. The Hot Rod protocol facilitates faster client and server interactions in comparison to other text based protocols(Memcached, REST) and allows clients to make decisions about load balancing, failover and data location operations.
 
-The `rhdg-hotrod-ssl-secured` deom demonstrates how to connect securely to remote Red Hat Data Grid (RHDG) to store, retrieve, and remove data from cache using the Hot Rod protocol. It is a simple Football Manager console application.
+The `hotrod-secured-remote-access-datagrid-openshift` demo demonstrates how to connect securely to remote Red Hat Data Grid (RHDG) running on Openshift to store, retrieve, and remove data from cache using the Hot Rod protocol. It is a simple Football Manager console application.
 
 System requirements
 -------------------
