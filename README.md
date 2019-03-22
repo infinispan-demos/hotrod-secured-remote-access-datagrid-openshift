@@ -26,11 +26,10 @@ Preparating Openshift Environment
 
 > Some parts of this sections can be skipped if already done
 
-1. Login and create OCP project
+1. Login as admin
 
 ~~~shell
 $ oc login <admin>
-$ oc new-project rhdg
 ~~~
 
 2. Import `datagrid-service` template
@@ -49,17 +48,23 @@ $ oc import-image -n openshift jboss-datagrid-7/datagrid73-openshift --from=regi
 Deploying Red Hat Data Grid 7.3.x on Openshift
 ---------------
 
-1. Deploy Red Hat Data Grid
+1. Login as user and create OCP project
 
 ~~~shell
 $ oc login <user>
+$ oc new-project rhdg
+~~~
+
+2. Deploy Red Hat Data Grid
+
+~~~shell
 $ oc new-app datagrid-service -n rhdg \
     -p APPLICATION_USER=datagrid \
     -p APPLICATION_PASSWORD=datagrid \
     -e CACHE_NAMES=teams
 ~~~
 
-2. Create a SSL Route for Hod Rod Service
+3. Create a SSL Route for Hod Rod Service
 
 ~~~shell
 $ oc create -n rhdg route passthrough secure-datagrid-app-hotrod --service datagrid-service
